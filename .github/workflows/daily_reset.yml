@@ -1,0 +1,17 @@
+name: Reset Diário do Space
+
+on:
+  schedule:
+    # Roda todo dia às 09:00 (Horário de Brasília)
+    - cron: '0 30 * * *'
+  workflow_dispatch: # Permite rodar manualmente clicando num botão
+
+jobs:
+  reset-space:
+    runs_on: ubuntu-latest
+    steps:
+      - name: Reiniciar Space
+        run: |
+          # Comando corrigido com seu usuário (sayydaviid) e space (avalia-backend)
+          curl -X POST https://huggingface.co/api/spaces/sayydaviid/avalia-backend/restart \
+          -H "Authorization: Bearer ${{ secrets.HF_TOKEN }}"
