@@ -1,7 +1,5 @@
 name: Reset Diário do Space
 
-
-
 on:
 
   schedule:
