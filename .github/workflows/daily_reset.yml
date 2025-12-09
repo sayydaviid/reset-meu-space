@@ -1,17 +1,31 @@
 name: Reset Diário do Space
 
+
+
 on:
+
   schedule:
+
     # Roda todo dia às 09:00 (Horário de Brasília)
+
     - cron: '0 30 * * *'
-  workflow_dispatch: # Permite rodar manualmente clicando num botão
+
+  workflow_dispatch: # Permite rodar manualmente
+
+
 
 jobs:
+
   reset-space:
-    runs_on: ubuntu-latest
+
+    runs-on: ubuntu-latest  # <--- AQUI ESTAVA O ERRO (agora corrigido para hífen)
+
     steps:
+
       - name: Reiniciar Space
+
         run: |
-          # Comando corrigido com seu usuário (sayydaviid) e space (avalia-backend)
+
           curl -X POST https://huggingface.co/api/spaces/sayydaviid/avalia-backend/restart \
+
           -H "Authorization: Bearer ${{ secrets.HF_TOKEN }}"
