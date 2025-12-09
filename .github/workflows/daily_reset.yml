@@ -8,7 +8,7 @@ on:
 
     # Roda todo dia às 09:00 (Horário de Brasília)
 
-    - cron: '0 30 * * *'
+    - cron: '0 2 * * *'
 
   workflow_dispatch: # Permite rodar manualmente
 
